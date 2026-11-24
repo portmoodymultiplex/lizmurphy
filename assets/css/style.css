@@ -1166,3 +1166,8 @@ footer {
 .mx-section.sand { background: var(--sand); color: var(--navy-deepest); }
 .mx-section.paper { color: var(--navy-deepest); }
 .mx-hero .hero-bg video { filter: brightness(0.72) saturate(0.95); }
+
+/* Lifestyle photography on the Mexico page */
+.mx-path-img { aspect-ratio: 4 / 3; background-size: cover; background-position: center; margin-bottom: 1.75rem; }
+.mx-path { padding-top: 2rem; }
+.mx-wide { aspect-ratio: 21 / 9; background-size: cover; background-position: center; margin-bottom: clamp(3rem, 6vw, 5rem); }
