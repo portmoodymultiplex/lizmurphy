@@ -895,3 +895,274 @@ footer {
   .nav-menu.open { transform: translateX(0); }
   .nav-cta-pair { margin-left: 0; flex-direction: column; align-items: stretch; gap: 0.75rem; }
 }
+
+/* ==========================================================================
+   THE SECOND COAST · Mexico program (Riviera Nayarit)
+   Sand + sea accents layered on the sage system. Let the photography lead.
+   ========================================================================== */
+:root {
+  --sand: #EFE6D4;
+  --sand-deep: #D9C8A6;
+  --sea: #134E4A;
+  --sea-ink: #0B2F2C;
+}
+
+/* Homepage band: full-bleed coast film with the copy set low on a deep scrim */
+.coast-band {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: var(--sea-ink);
+  color: var(--off-white);
+}
+.coast-band video {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  filter: brightness(0.82) saturate(0.95);
+}
+.coast-band::after {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(20,28,22,0.78) 0%, rgba(20,28,22,0.45) 45%, rgba(20,28,22,0) 75%),
+    linear-gradient(180deg, rgba(20,28,22,0) 35%, rgba(20,28,22,0.75) 100%);
+}
+.coast-copy {
+  position: relative; z-index: 2;
+  width: 100%; max-width: var(--max); margin: 0 auto;
+  padding: 0 var(--gutter) clamp(4rem, 10vh, 7rem);
+}
+.coast-copy .kicker {
+  font-family: var(--serif); font-style: italic; font-weight: 300;
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem); color: var(--sand); margin-bottom: 0.9rem;
+}
+.coast-copy h2 {
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(3rem, 8vw, 7rem); line-height: 0.95; letter-spacing: -0.02em;
+  margin-bottom: 1.75rem;
+}
+.coast-copy p { max-width: 44ch; font-size: clamp(1rem, 1.25vw, 1.12rem); line-height: 1.7; color: rgba(250,248,242,0.92); margin-bottom: 2.25rem; }
+.btn-sand { background: var(--sand); color: var(--sea-ink); border-color: var(--sand); }
+.btn-sand:hover { background: var(--off-white); border-color: var(--off-white); opacity: 1; }
+@media (max-width: 720px) {
+  .coast-band { min-height: 88vh; }
+  .coast-band::after { background: linear-gradient(180deg, rgba(20,28,22,0.15) 0%, rgba(20,28,22,0.55) 40%, rgba(20,28,22,0.9) 100%); }
+}
+
+/* ---------- Mexico program page ---------- */
+.mx-hero .hero-bg video, .mx-hero .hero-bg img { filter: brightness(0.78) saturate(1.02); }
+.mx-hero .hero-overlay {
+  background:
+    radial-gradient(ellipse 60% 45% at 50% 50%, rgba(11,47,44,0.6), transparent 75%),
+    linear-gradient(180deg, rgba(11,47,44,0.35) 0%, rgba(11,47,44,0.15) 40%, rgba(11,47,44,0.85) 100%);
+}
+.mx-how { display: grid; grid-template-columns: minmax(0,0.9fr) minmax(0,1.1fr); gap: clamp(2rem,6vw,6rem); }
+@media (max-width: 880px) { .mx-how { grid-template-columns: 1fr; } }
+.mx-hero h1 { font-size: clamp(3.2rem, 9vw, 8rem); line-height: 0.95; letter-spacing: -0.02em; }
+
+.mx-section { padding: clamp(5rem, 11vw, 9rem) var(--gutter); }
+.mx-section.sand { background: var(--sand); color: var(--sea-ink); }
+.mx-section.sea { background: var(--sea-ink); color: var(--off-white); }
+.mx-section.paper { background: var(--off-white); color: var(--sea-ink); }
+.mx-inner { max-width: var(--max); margin: 0 auto; }
+.mx-narrow { max-width: 760px; margin: 0 auto; }
+
+.mx-lead {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.mx-lead em { font-style: italic; }
+.mx-body p { font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.4rem; }
+.mx-sign { font-family: var(--serif); font-style: italic; font-size: 1.5rem; margin-top: 2rem; }
+
+.mx-h2 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(2.2rem, 4.8vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin-bottom: 1.5rem;
+}
+.mx-h2 em { font-style: italic; }
+
+.mx-paths { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(11,47,44,0.18); margin-top: 3.5rem; }
+.mx-path { padding: 2.5rem 2rem 2.5rem 0; border-right: 1px solid rgba(11,47,44,0.18); }
+.mx-path + .mx-path { padding-left: 2rem; }
+.mx-path:last-child { border-right: 0; }
+.mx-path .n { font-family: var(--serif); font-style: italic; font-size: 1.1rem; opacity: 0.6; margin-bottom: 1.25rem; }
+.mx-path h3 { font-family: var(--serif); font-weight: 400; font-size: 1.75rem; line-height: 1.15; margin-bottom: 1rem; }
+.mx-path p { font-size: 1rem; line-height: 1.7; opacity: 0.85; }
+@media (max-width: 880px) {
+  .mx-paths { grid-template-columns: 1fr; }
+  .mx-path, .mx-path + .mx-path { padding: 2rem 0; border-right: 0; border-bottom: 1px solid rgba(11,47,44,0.18); }
+}
+
+.mx-plate { position: relative; height: 88vh; min-height: 520px; overflow: hidden; }
+.mx-plate img { width: 100%; height: 100%; object-fit: cover; }
+.mx-plate figcaption {
+  position: absolute; left: var(--gutter); bottom: 1.5rem;
+  font-family: var(--serif); font-style: italic; color: var(--off-white); font-size: 1rem; opacity: 0.9;
+  text-shadow: 0 1px 12px rgba(0,0,0,0.4);
+}
+
+.mx-towns { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 3rem; border-top: 1px solid rgba(250,248,242,0.18); }
+.mx-town { padding: 1.75rem 1.5rem 1.75rem 0; border-bottom: 1px solid rgba(250,248,242,0.18); }
+.mx-town h3 { font-family: var(--serif); font-weight: 400; font-size: 1.5rem; margin-bottom: 0.4rem; }
+.mx-town p { font-size: 0.95rem; line-height: 1.6; opacity: 0.75; }
+@media (max-width: 980px) { .mx-towns { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .mx-towns { grid-template-columns: 1fr; } }
+
+.mx-steps { counter-reset: s; list-style: none; margin-top: 2.5rem; }
+.mx-steps li { counter-increment: s; display: grid; grid-template-columns: 4rem 1fr; gap: 1rem; padding: 1.6rem 0; border-top: 1px solid rgba(11,47,44,0.15); }
+.mx-steps li::before { content: counter(s, decimal-leading-zero); font-family: var(--serif); font-style: italic; font-size: 1.4rem; opacity: 0.55; }
+.mx-steps h3 { font-family: var(--serif); font-weight: 400; font-size: 1.4rem; margin-bottom: 0.35rem; }
+.mx-steps p { font-size: 1rem; line-height: 1.7; opacity: 0.85; }
+
+.mx-figures { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 3rem; border-top: 1px solid rgba(11,47,44,0.18); }
+.mx-fig { padding: 2rem 1.5rem 2rem 0; }
+.mx-fig .big { font-family: var(--serif); font-weight: 300; font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1; margin-bottom: 0.75rem; }
+.mx-fig .label { font-size: 0.95rem; line-height: 1.55; opacity: 0.8; }
+.mx-note { font-size: 0.85rem; opacity: 0.6; margin-top: 1.5rem; max-width: 70ch; }
+@media (max-width: 880px) { .mx-figures { grid-template-columns: 1fr 1fr; } }
+
+.mx-guide { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+.mx-guide-cover {
+  aspect-ratio: 3 / 4;
+  background: var(--off-white);
+  box-shadow: 0 30px 80px rgba(11,47,44,0.25);
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 8% 9%;
+  color: var(--sea-ink);
+  position: relative;
+  overflow: hidden;
+}
+.mx-guide-cover .ph { position: absolute; left: 0; right: 0; top: 0; height: 58%; background-size: cover; background-position: center; }
+.mx-guide-cover .t { position: relative; margin-top: auto; }
+.mx-guide-cover .t small { display: block; font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; margin-bottom: 0.75rem; opacity: 0.7; }
+.mx-guide-cover .t strong { display: block; font-family: var(--serif); font-weight: 300; font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1.05; }
+.mx-guide-cover .t span { display: block; font-family: var(--serif); font-style: italic; font-size: 0.95rem; margin-top: 0.6rem; opacity: 0.75; }
+@media (max-width: 880px) { .mx-guide { grid-template-columns: 1fr; } }
+
+.mx-partner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 6rem); }
+.mx-partner h3 { font-family: var(--serif); font-weight: 400; font-size: 1.6rem; margin-bottom: 0.75rem; }
+.mx-partner p { line-height: 1.75; opacity: 0.88; margin-bottom: 1rem; }
+.mx-partner a.u { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 880px) { .mx-partner { grid-template-columns: 1fr; } }
+
+.mx-section.sand .contact-form label { color: var(--sea); }
+.mx-section.sand .contact-form input, .mx-section.sand .contact-form select, .mx-section.sand .contact-form textarea { background: var(--off-white); }
+
+/* Keep long select options from pushing the contact form wider than the screen on phones */
+.contact-form .field { min-width: 0; }
+.contact-form select { max-width: 100%; min-width: 0; }
+.mx-hero .lede { text-shadow: 0 1px 2px rgba(11,47,44,0.6), 0 2px 24px rgba(11,47,44,0.55); color: #fff; }
+.mx-hero h1 { text-shadow: 0 2px 40px rgba(11,47,44,0.4); }
+
+/* ==========================================================================
+   DESIGN PASS · Nov 2026
+   One quieter, more editorial system across every page: no scroll
+   animation, fewer labels, hairlines instead of boxes, photography that
+   breathes, one deep green and one warm sand shared by the whole site.
+   ========================================================================== */
+
+/* Shared palette: the Mexico pages use the site's own greens */
+:root {
+  --sea: var(--navy-mid);
+  --sea-ink: var(--navy-deepest);
+  --sand: #EDE4D3;
+}
+
+/* Scroll reveal, refreshed: a short rise and fade with an easing that settles
+   instead of drifting. Only hidden once the script has loaded. */
+.js .reveal {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition: opacity 1.1s cubic-bezier(.2,.7,.2,1), transform 1.1s cubic-bezier(.2,.7,.2,1);
+  will-change: opacity, transform;
+}
+.js .reveal.is-visible { opacity: 1; transform: none; }
+.js .reveal.delay-1 { transition-delay: .09s; }
+.js .reveal.delay-2 { transition-delay: .18s; }
+.js .reveal.delay-3 { transition-delay: .27s; }
+
+/* Slow drift on full-bleed imagery as it passes through the screen */
+.coast-band video, .mx-plate img { transform: scale(var(--zoom, 1.08)); will-change: transform; }
+.js .coast-copy > * { opacity: 0; transform: translate3d(0, 22px, 0); transition: opacity 1.1s cubic-bezier(.2,.7,.2,1), transform 1.1s cubic-bezier(.2,.7,.2,1); }
+.js .coast-band.in-view .coast-copy > * { opacity: 1; transform: none; }
+.js .coast-band.in-view .coast-copy > :nth-child(2) { transition-delay: .1s; }
+.js .coast-band.in-view .coast-copy > :nth-child(3) { transition-delay: .2s; }
+.js .coast-band.in-view .coast-copy > :nth-child(4) { transition-delay: .3s; }
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal, .js .coast-copy > * { opacity: 1; transform: none; transition: none; }
+  .coast-band video, .mx-plate img { transform: none; }
+}
+
+/* Labels: keep the page from reading like a template */
+.hero .eyebrow,
+.section-head .eyebrow,
+.section-quote .eyebrow,
+.split .content .eyebrow,
+.consult-banner .eyebrow,
+.contact-section .eyebrow,
+.article-meta .eyebrow { display: none; }
+.section-head h2, .split .content h2 { margin-top: 0; }
+
+/* Navigation: lighter, one call to action */
+.nav { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.nav.scrolled, .nav.solid { padding-top: 1rem; padding-bottom: 1rem; }
+.nav-menu > li > a { font-size: 0.74rem; letter-spacing: 0.16em; font-weight: 400; }
+.nav-cta-ghost { display: none !important; }
+.nav-cta { padding: 0.7rem 1.3rem !important; font-size: 0.72rem !important; letter-spacing: 0.14em !important; border-radius: 2px; }
+
+/* Buttons: squarer, calmer */
+.btn { border-radius: 2px; padding: 1rem 2rem; font-size: 0.76rem; letter-spacing: 0.16em; font-weight: 500; }
+
+/* Heroes: let the photograph carry it, darken only where the words sit */
+.hero-bg img, .hero-bg video { filter: brightness(0.78) saturate(0.95); }
+.hero-overlay {
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 55%, rgba(30,38,31,0.55), transparent 75%),
+    linear-gradient(180deg, rgba(30,38,31,0.45) 0%, rgba(30,38,31,0.1) 35%, rgba(30,38,31,0.85) 100%);
+}
+.hero h1 { font-weight: 300; letter-spacing: -0.015em; text-shadow: 0 2px 30px rgba(20,28,22,0.35); }
+.hero .lede { color: #fff; text-shadow: 0 1px 2px rgba(20,28,22,0.5), 0 2px 20px rgba(20,28,22,0.45); }
+
+/* Section rhythm and headings */
+.section { padding-top: clamp(6rem, 11vw, 10rem); padding-bottom: clamp(6rem, 11vw, 10rem); }
+.section-head h2, .split .content h2, .consult-banner h2, .contact-section h2, .section-quote h2 {
+  font-weight: 300; letter-spacing: -0.015em; line-height: 1.05;
+}
+.section-head { margin-bottom: clamp(3rem, 6vw, 5rem); }
+
+/* Cards become an editorial grid: hairlines, no boxes, no icons */
+.specialty-grid { gap: 0 3rem; }
+.specialty-card {
+  background: none; border: 0; border-top: 1px solid var(--hairline);
+  border-radius: 0; padding: 2.25rem 0 2.5rem;
+}
+.specialty-card:hover { border-color: var(--hairline); }
+.specialty-card .icon { display: none; }
+.specialty-card h3 { font-size: 1.55rem; line-height: 1.2; margin-bottom: 0.9rem; }
+
+/* Neighbourhood and blog cards: photo first, no tile chrome */
+.neighbourhood-card { background: none !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; }
+.neighbourhood-card .media { border-radius: 0; }
+.neighbourhood-card .body { padding: 1.5rem 0 0; }
+.neighbourhood-card h3 { font-weight: 300; }
+.section.light .neighbourhood-card h3, .section.light .neighbourhood-card p { color: var(--navy-deepest); }
+
+/* Numbers: lighter figures on a single hairline */
+.num-cell .big { font-weight: 300; letter-spacing: -0.01em; }
+
+/* Forms: quieter fields */
+.contact-form input, .contact-form select, .contact-form textarea { border-radius: 2px; }
+.contact-form button[type="submit"] { border-radius: 2px; letter-spacing: 0.16em; font-size: 0.76rem; }
+
+/* Mexico page: same greens as the rest of the site */
+.mx-section.sea { background: var(--navy-deepest); }
+.mx-section.sand { background: var(--sand); color: var(--navy-deepest); }
+.mx-section.paper { color: var(--navy-deepest); }
+.mx-hero .hero-bg video { filter: brightness(0.72) saturate(0.95); }

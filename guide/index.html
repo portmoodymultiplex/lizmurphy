@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Bucerías Buyer's Guide · Liz Murphy</title>
+<meta name="description" content="The Bucerías Buyer's Guide: how Canadians own coastal property in Mexico, what it costs, residency, healthcare, what to do with your BC home, and the mistakes to avoid. By Liz Murphy, REALTOR®." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+/* VOICE  quiet, expensive, unhurried; the coast does the talking
+   IDEA   a printed shelter-magazine supplement you turn by the corner
+   PICTURE full-bleed photographs of the bay against wide white margins
+   COLOUR paper white, deep sea ink, one sand field; nothing else
+   TYPE   Fraunces light for display, Inter for the small print
+   LAYOUT two-page spreads on desktop, a swipeable single page on phones, one page per sheet in print */
+:root{
+  --paper:#FBF9F4; --ink:#14201E; --sea:#0B2F2C; --sand:#ECE3D1; --rule:rgba(20,32,30,.16);
+  --serif:'Fraunces',Georgia,serif; --sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box;min-width:0;margin:0;padding:0}
+html,body{height:100%}
+body{background:#DCD6CB;color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow:hidden}
+
+/* ---------- stage + book ---------- */
+.stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;perspective:2600px;padding:56px 24px 72px}
+.book{--ph:min(calc(100vh - 150px), calc((100vw - 64px) / 2 / .7727));--pw:calc(var(--ph) * .7727);
+  position:relative;width:calc(var(--pw)*2);height:var(--ph);transform-style:preserve-3d;transition:transform .9s cubic-bezier(.6,.05,.2,1)}
+.book.closed-front{transform:translateX(calc(var(--pw) * -.5))}
+.book.closed-back{transform:translateX(calc(var(--pw) * .5))}
+.leaf{position:absolute;top:0;left:50%;width:50%;height:100%;transform-origin:left center;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.6,.05,.2,1)}
+.leaf.flipped{transform:rotateY(-180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;container-type:size}
+.face.back{transform:rotateY(180deg)}
+.leaf .face.front{box-shadow:inset 14px 0 22px -18px rgba(0,0,0,.28)}
+.leaf .face.back{box-shadow:inset -14px 0 22px -18px rgba(0,0,0,.28)}
+.book::after{content:"";position:absolute;inset:0;box-shadow:0 40px 90px -30px rgba(20,32,30,.45);pointer-events:none;z-index:-1}
+.book.closed-front::after{left:50%}.book.closed-back::after{right:50%}
+
+/* ---------- page system (sizes in cqi so screen and print match) ---------- */
+.page{position:absolute;inset:0;background:var(--paper);padding:11cqi 10cqi 12cqi;display:flex;flex-direction:column}
+.page.full{padding:0}
+.page.sand{background:var(--sand)}
+.page.sea{background:var(--sea);color:#F3EFE6}
+.folio{position:absolute;bottom:5.2cqi;left:10cqi;right:10cqi;display:flex;justify-content:space-between;font-size:1.55cqi;letter-spacing:.02em;opacity:.55}
+.front .folio{flex-direction:row-reverse}
+.kick{font-family:var(--serif);font-style:italic;font-weight:300;font-size:2.6cqi;opacity:.7;margin-bottom:3cqi}
+h1,h2{font-family:var(--serif);font-weight:300;letter-spacing:-.015em;line-height:1.02;text-wrap:balance}
+h2{font-size:8.2cqi;margin-bottom:6cqi}
+h2 em,h1 em{font-style:italic}
+h3{font-family:var(--serif);font-weight:400;font-size:3.5cqi;line-height:1.2;margin:5cqi 0 1.8cqi}
+p,li{font-size:2.3cqi;line-height:1.62}
+p+p{margin-top:1.6cqi}
+.lede{font-family:var(--serif);font-weight:300;font-size:3.9cqi;line-height:1.35;margin-bottom:4cqi}
+.lede em{font-style:italic}
+ul,ol{padding-left:3.2cqi}
+li{margin-bottom:1.3cqi;padding-left:.8cqi}
+ol li::marker{font-family:var(--serif);font-style:italic}
+strong{font-weight:500}
+.quote{font-family:var(--serif);font-style:italic;font-weight:300;font-size:4.6cqi;line-height:1.3;border-top:1px solid var(--rule);padding-top:4cqi;margin-top:auto}
+.small{font-size:1.75cqi;line-height:1.6;opacity:.75}
+.bottom{margin-top:auto}
+table{width:100%;border-collapse:collapse;margin-top:2cqi}
+th,td{text-align:left;vertical-align:top;padding:2cqi 2cqi 2cqi 0;border-top:1px solid var(--rule);font-size:2.15cqi;line-height:1.5}
+th{font-weight:500;width:42%}
+thead th{font-family:var(--serif);font-style:italic;font-weight:300;font-size:2.1cqi;opacity:.7;border-top:0}
+tbody tr:last-child td,tbody tr:last-child th{border-bottom:1px solid var(--rule)}
+.opt td,.opt th{font-size:1.95cqi;width:auto}
+.img{background-size:cover;background-position:center}
+.ph{position:absolute;inset:0}
+.cap{position:absolute;left:8cqi;bottom:7cqi;color:#fff;font-family:var(--serif);font-style:italic;font-size:2.4cqi;text-shadow:0 1px 14px rgba(0,0,0,.35)}
+
+/* cover */
+.cover .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,47,44,.05) 40%,rgba(11,47,44,.7) 100%)}
+.cover .t{position:absolute;left:9cqi;right:9cqi;bottom:10cqi;color:#fff}
+.cover .t .k{font-family:var(--serif);font-style:italic;font-size:3cqi;opacity:.9;margin-bottom:2.5cqi}
+.cover h1{font-size:12.5cqi;line-height:.95;margin-bottom:4cqi}
+.cover .logo{width:22cqi;margin-top:5cqi;display:block}
+.cover .by{font-size:1.9cqi;letter-spacing:.02em;opacity:.9}
+.cover .top{position:absolute;top:8cqi;left:9cqi;right:9cqi;display:flex;justify-content:space-between;color:#fff;font-size:1.8cqi;opacity:.9}
+
+/* contents */
+.toc{list-style:none;padding:0;margin-top:2cqi}
+.toc li{display:grid;grid-template-columns:1fr auto;gap:3cqi;padding:1.95cqi 0;border-top:1px solid var(--rule);margin:0;font-family:var(--serif);font-weight:300;font-size:3.2cqi}
+.toc li span{font-family:var(--sans);font-size:1.9cqi;opacity:.6;align-self:center}
+.toc li:last-child{border-bottom:1px solid var(--rule)}
+
+.portrait{height:62cqi;margin:-11cqi -10cqi 6cqi;background:var(--paper) center bottom/contain no-repeat;background-blend-mode:multiply}
+.photo-top{height:62cqi;margin:-11cqi -10cqi 7cqi}
+.photo-mid{height:44cqi;margin:4cqi 0 0}
+.steps{list-style:none;padding:0;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:7cqi 1fr;padding:2.1cqi 0;border-top:1px solid var(--rule);margin:0}
+.steps li::before{content:counter(s);font-family:var(--serif);font-style:italic;font-size:3cqi;opacity:.55;line-height:1.2}
+.steps li:last-child{border-bottom:1px solid var(--rule)}
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:5cqi;margin-top:2cqi}
+.paths h3{margin-top:0}
+.mistakes{list-style:none;padding:0}
+.mistakes li{padding:1.35cqi 0;border-top:1px solid var(--rule);margin:0}
+.mistakes p{font-size:2.15cqi;line-height:1.5}
+.mistakes li:last-child{border-bottom:1px solid var(--rule)}
+.sea .rule{border-color:rgba(243,239,230,.25)}
+.contact{border-top:1px solid rgba(243,239,230,.25);padding-top:4cqi;margin-top:auto}
+.contact .name{font-family:var(--serif);font-weight:300;font-size:6cqi;line-height:1.05;margin-bottom:1.5cqi}
+.contact p{font-size:2.2cqi}
+.legal p{font-size:1.75cqi;line-height:1.6;opacity:.8}
+
+/* ---------- controls ---------- */
+.ui{position:fixed;left:0;right:0;bottom:18px;display:flex;align-items:center;justify-content:center;gap:18px;font-size:13px;color:#3d4643;z-index:50}
+.ui button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(20,32,30,.25);background:rgba(251,249,244,.85);color:var(--ink);font-size:18px;cursor:pointer;transition:background .2s}
+.ui button:hover{background:#fff}.ui button:disabled{opacity:.3;cursor:default}
+.ui button:focus-visible{outline:2px solid var(--sea);outline-offset:2px}
+.ui .count{min-width:90px;text-align:center;font-variant-numeric:tabular-nums}
+.top-bar{position:fixed;top:0;left:0;right:0;height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;color:#3d4643;z-index:50}
+.top-bar a{color:inherit}
+.hint{opacity:.6}
+.hit{position:absolute;top:0;bottom:0;width:50%;cursor:pointer;z-index:40}
+.hit.l{left:0}.hit.r{right:0}
+
+/* ---------- phones: native swipe, one page at a time ---------- */
+@media (max-width:820px), (max-aspect-ratio:1/1){
+  body{overflow:auto;height:auto}
+  .stage{position:static;display:block;perspective:none;padding:56px 0 90px}
+  .book{transform:none!important;width:100%;height:auto;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:0 6vw;transform-style:flat;scrollbar-width:none}
+  .book::-webkit-scrollbar{display:none}
+  .book::after{display:none}
+  .leaf{display:contents}
+  .face{position:relative;flex:0 0 88vw;height:calc(88vw / .7727);transform:none!important;scroll-snap-align:center;box-shadow:0 18px 40px -20px rgba(20,32,30,.45)!important}
+  .hit,.hint{display:none}
+}
+
+/* ---------- print: one page per letter sheet ---------- */
+@page{size:8.5in 11in;margin:0}
+@media print{
+  body{background:none;overflow:visible;height:auto}
+  .ui,.top-bar,.hit{display:none!important}
+  .stage{position:static;display:block;padding:0;perspective:none}
+  .book{transform:none!important;width:auto;height:auto;display:block}
+  .book::after{display:none}
+  .leaf{display:contents}
+  .face{position:relative;width:8.5in;height:11in;transform:none!important;box-shadow:none!important;break-after:page;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media (prefers-reduced-motion:reduce){.leaf,.book{transition:none}}
+</style>
+</head>
+<body>
+
+<div class="top-bar"><a href="../mexico.html">Liz Murphy · The Second Coast</a><span class="hint">Click the page edges or use the arrow keys · <a href="Bucerias-Buyers-Guide-Liz-Murphy.pdf">Print version (PDF)</a></span></div>
+
+<main class="stage">
+<div class="book closed-front" id="book">
+
+<!-- 1 · cover -->
+<section class="page full cover" data-p>
+  <div class="ph img" style="background-image:url('img/cover.jpg')"></div>
+  <div class="top"><span>The Second Coast</span><span>2026 edition</span></div>
+  <div class="t">
+    <p class="k">For Canadians moving to, retiring in, or investing in Mexico</p>
+    <h1>The Bucerías Buyer's Guide</h1>
+    <p class="by">Liz Murphy, REALTOR® · Zada Group, Stonehaus Realty</p>
+    <img class="logo" src="img/zada-logo-white.png" alt="Zada Group" />
+  </div>
+</section>
+
+<!-- 2 · inside cover -->
+<section class="page sand" data-p>
+  <p class="kick">The Second Coast</p>
+  <p class="lede" style="font-size:5.4cqi;margin-top:auto"><em>If you're dreaming about Mexico, I've lived that dream. Let me help you do it right.</em></p>
+  <p class="small" style="margin-top:4cqi">Liz Murphy</p>
+  <img src="img/zada-logo-ink.png" alt="Zada Group" style="width:20cqi;margin-top:auto;opacity:.85" />
+  <div class="folio"><span>2</span><span>The Bucerías Buyer's Guide</span></div>
+</section>
+
+<!-- 3 · contents -->
+<section class="page" data-p>
+  <h2>Contents</h2>
+  <ol class="toc">
+    <li>Why Bucerías, and why me <span>4</span></li>
+    <li>Is Mexico right for you? <span>7</span></li>
+    <li>How Canadians legally own property on the coast <span>9</span></li>
+    <li>The buying process, step by step <span>11</span></li>
+    <li>What it really costs <span>13</span></li>
+    <li>Living there: residency, healthcare and banking <span>16</span></li>
+    <li>What to do with your BC home <span>18</span></li>
+    <li>Renting out your Mexico property <span>21</span></li>
+    <li>Seven mistakes Canadians make <span>22</span></li>
+    <li>Your next steps <span>23</span></li>
+  </ol>
+  <div class="folio"><span>3</span><span>The Bucerías Buyer's Guide</span></div>
+</section>
+
+<!-- 4 · chapter 1 -->
+<section class="page" data-p>
+  <p class="kick">Chapter one</p>
+  <h2>Why Bucerías, <em>and why me</em></h2>
+  <p class="lede">In 2004, I packed up my life and moved to Mexico.</p>
+  <p>I opened a gym, my kids went to school there, and for seven years we lived the life most people only get on vacation. Slower days, long family dinners, sunsets that made you forget to check your phone.</p>
+  <p>Real estate found me almost by accident. My dad was a REALTOR® here in Canada, and he started a website for property in the Bucerías area. Canadians kept contacting him, so he'd pass them to a local agent and collect a referral fee. One day he called me and said, "Why am I sending these to someone else? You should be taking them out, and we should be doing these deals together."</p>
+  <div class="folio"><span>4</span><span>Why Bucerías, and why me</span></div>
+</section>
+
+<!-- 5 · chapter 1 cont. with portrait -->
+<section class="page" data-p>
+  <div class="portrait" style="background-image:url('img/liz.jpg')"></div>
+  <p>So we did. We got busy, then busier. In 2010 we opened a brick-and-mortar office under the name Bienvenidos Real Estate and hired an assistant. My dad ran it until 2019, when he sold it to Andres (Andy) Cabrera, who had been with the firm since 2013. Bienvenidos is still going strong today, and the relationships we built there are very much alive.</p>
+  <p>Today I'm a REALTOR® in New Westminster, and I've come full circle. I help Canadians sell their homes here and connect them with Bienvenidos Real Estate in Bucerías, so both ends of the move are handled by people who actually talk to each other.</p>
+  <div class="folio"><span>5</span><span>Why Bucerías, and why me</span></div>
+</section>
+
+<!-- 6 · chapter 1 close -->
+<section class="page" data-p>
+  <p>It's personal for me, too. Now that my kids are grown, this work is my first step toward getting back there myself someday.</p>
+  <p>I speak the language. I know the neighbourhoods, and I know which "ocean view" requires a ladder. And I know what it's like to raise a family there, because I did.</p>
+  <div class="photo-mid img" style="background-image:url('img/town.jpg');height:60cqi;margin-top:7cqi"></div>
+  <p class="small" style="margin-top:2cqi"><em>Beachfront in Bucerías.</em></p>
+  <div class="folio"><span>6</span><span>Why Bucerías, and why me</span></div>
+</section>
+
+<!-- 7 · chapter 2 -->
+<section class="page" data-p>
+  <p class="kick">Chapter two</p>
+  <h2>Is Mexico <em>right for you?</em></h2>
+  <p>Before you look at a single listing, get clear on what kind of Mexico life you actually want. There are two common paths.</p>
+  <div class="paths">
+    <div><h3>The snowbird</h3><p>You keep your BC home and spend the winter months in Mexico. Lower commitment, two homes to look after.</p></div>
+    <div><h3>The full move</h3><p>You sell in BC and make Mexico home base. More freedom and usually more money in your pocket, but a bigger leap.</p></div>
+  </div>
+  <div class="photo-mid img bottom" style="background-image:url('img/water.jpg');height:34cqi"></div>
+  <div class="folio"><span>7</span><span>Is Mexico right for you?</span></div>
+</section>
+
+<!-- 8 · self check -->
+<section class="page" data-p>
+  <h3 style="margin-top:0">Quick self-check</h3>
+  <p>Answer these honestly. There are no wrong answers, but they'll tell you which path fits.</p>
+  <ol style="margin-top:2.5cqi">
+    <li>How many months a year do you actually want to be in Mexico?</li>
+    <li>Do you need to stay close to kids, grandkids or aging parents in BC?</li>
+    <li>Would you rather have your equity working for you, or keep a home to come back to?</li>
+    <li>Are you comfortable managing a property from a distance, or would you hire help?</li>
+    <li>How important is being near family doctors and specialists you already know?</li>
+    <li>Have you spent at least a few weeks in Bucerías in both high season and low season?</li>
+  </ol>
+  <h3>Rent before you buy</h3>
+  <p>If you haven't spent a full season in Bucerías, rent first. A winter in town will tell you more than any guide, including this one. You'll learn which streets are quiet, which are party central on a Saturday, and whether you can handle the heat in June.</p>
+  <div class="folio"><span>8</span><span>Is Mexico right for you?</span></div>
+</section>
+
+<!-- 9 · chapter 3 -->
+<section class="page" data-p>
+  <p class="kick">Chapter three</p>
+  <h2>How Canadians legally own property <em>on the coast</em></h2>
+  <p class="lede">Yes, Canadians can own property in Bucerías. It just works a little differently than at home.</p>
+  <h3>The restricted zone</h3>
+  <p>Mexico's constitution restricts foreigners from holding direct title to land within 50 km of the coast or 100 km of a border. Bucerías, being right on the beach, is inside that zone.</p>
+  <h3>The fideicomiso (bank trust)</h3>
+  <p>The solution is a fideicomiso, a trust held by a Mexican bank on your behalf. The bank holds title, but you are the beneficiary with full rights to use, rent, renovate, sell, or leave the property to your heirs. It's a well-established system that foreign buyers have used for decades.</p>
+  <div class="folio"><span>9</span><span>Owning on the coast</span></div>
+</section>
+
+<!-- 10 · fideicomiso table + ejido -->
+<section class="page" data-p>
+  <table>
+    <thead><tr><th>The fideicomiso</th><td style="font-family:var(--serif);font-style:italic;font-weight:300;font-size:2.1cqi;opacity:.7">Per Bienvenidos Real Estate, USD</td></tr></thead>
+    <tbody>
+      <tr><th>Setup cost</th><td>About $1,000</td></tr>
+      <tr><th>Annual bank fee</th><td>About $566 per year</td></tr>
+      <tr><th>Term</th><td>50 years, renewable</td></tr>
+      <tr><th>Setup time</th><td>Varies; your agent and notario will give you a timeline for your purchase</td></tr>
+    </tbody>
+  </table>
+  <h3 style="margin-top:9cqi">Ejido land: walk away</h3>
+  <p>Ejido land is communal agricultural land. Unless it has been fully and properly converted to private property, a foreigner can't securely own it, no matter what the seller says or how good the price looks. If you hear the word "ejido," ask a lot of questions, and be prepared to walk away.</p>
+  <div class="photo-mid img bottom" style="background-image:url('img/dining.jpg');height:46cqi"></div>
+  <div class="folio"><span>10</span><span>Owning on the coast</span></div>
+</section>
+
+<!-- 11 · chapter 4 -->
+<section class="page" data-p>
+  <p class="kick">Chapter four</p>
+  <h2>The buying process, <em>step by step</em></h2>
+  <p>From accepted offer to keys in hand typically takes about 60 days (per Bienvenidos Real Estate). Here's how it usually goes.</p>
+  <ol class="steps" style="margin-top:3cqi">
+    <li><p>Find the property with a reputable local agent.</p></li>
+    <li><p>Make an offer. Once accepted, you sign a promise to purchase (promesa de compraventa).</p></li>
+    <li><p>Pay your deposit, typically 10% of the price, into a third-party escrow account. Never to the seller or an agent directly.</p></li>
+    <li><p>The notario público reviews title, permits and taxes, and the bank sets up your fideicomiso.</p></li>
+    <li><p>The property is appraised and paperwork is finalized.</p></li>
+    <li><p>You sign the deed in front of the notario, the balance is released from escrow, and you get your keys.</p></li>
+  </ol>
+  <div class="folio"><span>11</span><span>The buying process</span></div>
+</section>
+
+<!-- 12 · notario -->
+<section class="page" data-p>
+  <div class="photo-top img" style="background-image:url('img/hills.jpg')"></div>
+  <h3 style="margin-top:0">The notario is not a Canadian notary</h3>
+  <p>In Mexico, the notario público is a lawyer appointed by the state and one of the most important people in your purchase. They confirm clean title, calculate and collect taxes, and register the sale. Your agent will work with a notario they trust, but you can also choose your own.</p>
+  <p class="quote">Rule of thumb: if anyone asks you to wire money directly to them instead of to escrow, stop and call me.</p>
+  <div class="folio"><span>12</span><span>The buying process</span></div>
+</section>
+
+<!-- 13 · chapter 5 -->
+<section class="page" data-p>
+  <p class="kick">Chapter five</p>
+  <h2>What it <em>really</em> costs</h2>
+  <p>Here are realistic ballpark numbers, in US dollars, for a typical 2-bedroom, 2-bathroom condo in Bucerías. Prices currently start around $350,000 for that kind of unit (per Bienvenidos Real Estate).</p>
+  <table>
+    <tbody>
+      <tr><th>Purchase price, 2 bed / 2 bath condo</th><td>Around $350,000</td></tr>
+      <tr><th>Deposit (held in escrow)</th><td>About 10%, so around $35,000</td></tr>
+      <tr><th>Closing costs, all in</th><td>About 4% to 6% of price, so roughly $14,000 to $21,000</td></tr>
+      <tr><th>Escrow fee (buyer paid)</th><td>About $750</td></tr>
+      <tr><th>Fideicomiso setup</th><td>About $1,000</td></tr>
+      <tr><th>Fideicomiso annual fee</th><td>About $566 per year</td></tr>
+      <tr><th>Property tax (predial), HOA, insurance</th><td>Ask your agent for the specific property; HOA fees vary widely by building</td></tr>
+    </tbody>
+  </table>
+  <div class="folio"><span>13</span><span>What it really costs</span></div>
+</section>
+
+<!-- 14 · moving money -->
+<section class="page" data-p>
+  <h3 style="margin-top:0">Moving your money</h3>
+  <p>Most coastal property is priced and paid in US dollars. Shop around before you move a large sum: a currency exchange service often beats your bank's rate by a meaningful amount, and on a few hundred thousand dollars that adds up fast.</p>
+  <div class="photo-mid img" style="background-image:url('img/kitchen.jpg');height:52cqi;margin-top:7cqi"></div>
+  <p class="quote">All figures are estimates as of November 2026 and will vary by property. Your agent and notario will give you exact numbers before you commit.</p>
+  <div class="folio"><span>14</span><span>What it really costs</span></div>
+</section>
+
+<!-- 15 · plate -->
+<section class="page full" data-p>
+  <div class="ph img" style="background-image:url('img/plate-bay.jpg')"></div>
+  <p class="cap">Riviera Nayarit</p>
+</section>
+
+<!-- 16 · chapter 6 -->
+<section class="page" data-p>
+  <p class="kick">Chapter six</p>
+  <h2>Living there: <em>residency, healthcare and banking</em></h2>
+  <h3 style="margin-top:0">Your options for staying</h3>
+  <ul>
+    <li><strong>Visitor:</strong> Canadians can enter as visitors, but the length of stay is decided at the border and isn't guaranteed. Fine for a season, not a plan for living there.</li>
+    <li><strong>Temporary residency:</strong> for stays longer than six months, renewable for up to four years. You apply at a Mexican consulate in Canada (Vancouver has one) before you go, then finish the process in Mexico.</li>
+    <li><strong>Permanent residency:</strong> available after four years as a temporary resident, or directly if you meet higher financial requirements.</li>
+  </ul>
+  <div class="photo-mid img bottom" style="background-image:url('img/living.jpg');height:46cqi"></div>
+  <div class="folio"><span>16</span><span>Living there</span></div>
+</section>
+
+<!-- 17 · money test, healthcare, banking -->
+<section class="page" data-p>
+  <h3 style="margin-top:0">The money test</h3>
+  <p>To qualify for temporary residency, you need to show either steady monthly income or a healthy savings balance. In 2026, that works out to roughly US$4,300 to $4,500 per month in income over the last six months, or roughly US$73,000 to $75,000 in average savings over the last year. The thresholds change every year, so check with the consulate before you apply.</p>
+  <h3>Healthcare</h3>
+  <p>Puerto Vallarta, about 30 minutes away, has well-regarded private hospitals, and many expats carry private health insurance. Remember that BC MSP has residency rules: if you're away too many months of the year, you can lose your coverage. Check with Health Insurance BC before you plan a long stay.</p>
+  <h3>Banking and paperwork</h3>
+  <p>Once you're a resident, you'll get a CURP (Mexico's personal ID number), which makes opening a local bank account, setting up utilities, and getting a phone plan much easier.</p>
+  <div class="folio"><span>17</span><span>Living there</span></div>
+</section>
+
+<!-- 18 · chapter 7 -->
+<section class="page" data-p>
+  <p class="kick">Chapter seven</p>
+  <h2>What to do with <em>your BC home</em></h2>
+  <p>For most Canadians, the BC home is the biggest asset they own. What you do with it shapes everything else about your move: your budget in Mexico, your taxes, and whether you have a way back.</p>
+  <h3>What your equity could look like</h3>
+  <p>Here in New Westminster, a typical 2-bedroom, 2-bathroom condo sells for roughly $600,000 to $700,000, and a townhome for roughly $1 million to $1.2 million.</p>
+  <p>Example scenario (illustrative, not a real client): a couple owns a mortgage-free townhome in New West worth about $1.1 million. They sell and buy a 2-bedroom condo in Bucerías for around US$350,000, which is about C$480,000 to C$500,000 depending on the exchange rate. After costs on both ends, that can leave well over half a million dollars for retirement, travel, and the occasional margarita.</p>
+  <p>Same couple, different choice: they keep the townhome and snowbird. That means a second property to carry and a different set of rules to follow.</p>
+  <div class="folio"><span>18</span><span>Your BC home</span></div>
+</section>
+
+<!-- 19 · three options -->
+<section class="page" data-p>
+  <h3 style="margin-top:0">Your three options</h3>
+  <table class="opt">
+    <thead><tr><th></th><th>Best for</th><th>The upside</th><th>Watch out for</th></tr></thead>
+    <tbody>
+      <tr><th>Sell and move</th><td>A full-time move to Mexico</td><td>Frees up your equity, no landlord headaches, simpler if you sell before you leave</td><td>Hard to re-enter the BC market later. Selling after you become a non-resident gets complicated.</td></tr>
+      <tr><th>Keep and rent</th><td>Keeping a way back, plus income</td><td>Rental income, and you keep your foot in the BC market</td><td>Tax rules when your home becomes a rental, tax on rent as a non-resident, managing tenants from 3,000 km away</td></tr>
+      <tr><th>Keep and snowbird</th><td>Splitting the year</td><td>A home base in BC and family nearby</td><td>BC's Speculation and Vacancy Tax if the home sits empty, insurance rules for vacant homes, MSP residency rules</td></tr>
+    </tbody>
+  </table>
+  <p class="quote">A tip from experience: selling before you leave is almost always simpler than selling from Mexico.</p>
+  <div class="folio"><span>19</span><span>Your BC home</span></div>
+</section>
+
+<!-- 20 · accountant + sell first -->
+<section class="page" data-p>
+  <h3 style="margin-top:0">Questions to ask your accountant before you decide</h3>
+  <ul>
+    <li>If I sell now, is my whole gain covered by the principal residence exemption?</li>
+    <li>What happens, tax-wise, if I become a non-resident of Canada?</li>
+    <li>If I sell after I've moved, what is a clearance certificate and how long will it hold up my money?</li>
+    <li>If I turn my home into a rental, what are the tax consequences, and are there elections I should make?</li>
+    <li>How is rent taxed if I'm living in Mexico?</li>
+    <li>Will the Speculation and Vacancy Tax apply to my situation?</li>
+  </ul>
+  <h3>Sell first or buy first?</h3>
+  <ul>
+    <li><strong>Sell first:</strong> you know exactly what you have to spend, and there's no carrying two properties. You may need a short-term rental in between.</li>
+    <li><strong>Buy first:</strong> you lock in the right place in Bucerías, but you may carry two properties for a while.</li>
+    <li><strong>The middle path:</strong> sell in BC, rent in Bucerías for a season, then buy once you know which street you love.</li>
+  </ul>
+  <div class="folio"><span>20</span><span>Your BC home</span></div>
+</section>
+
+<!-- 21 · chapter 8 -->
+<section class="page" data-p>
+  <p class="kick">Chapter eight</p>
+  <h2>Renting out your <em>Mexico property</em></h2>
+  <p>Many owners rent their place out when they're not using it, which can cover the carrying costs and then some.</p>
+  <table>
+    <tbody>
+      <tr><th>Monthly rent, 2 bed / 2 bath condo</th><td>About $2,000 to $3,000 per month, plus utilities (USD, per Bienvenidos Real Estate)</td></tr>
+      <tr><th>Property management fee</th><td>About 20% of rental income</td></tr>
+    </tbody>
+  </table>
+  <h3>What to know</h3>
+  <ul>
+    <li>High season (roughly November to April) is when the snowbirds arrive and demand peaks. Summer is hot, humid and much quieter.</li>
+    <li>A good property manager handles bookings, cleaning, maintenance and guest issues. From 3,000 km away, that's worth the fee. Bienvenidos Real Estate offers rentals and property management in-house and manages about 25 properties in the area.</li>
+    <li>Rental income earned in Mexico is taxable in Mexico, and you may also need to report it in Canada. Get cross-border tax advice before your first guest arrives.</li>
+  </ul>
+  <div class="folio"><span>21</span><span>Renting it out</span></div>
+</section>
+
+<!-- 22 · chapter 9 -->
+<section class="page" data-p>
+  <p class="kick">Chapter nine</p>
+  <h2 style="margin-bottom:3.5cqi">Seven mistakes <em>Canadians make</em></h2>
+  <ul class="mistakes" style="font-size:0">
+    <li><p><strong>Buying ejido land.</strong> If it isn't properly converted to private property, you don't really own it.</p></li>
+    <li><p><strong>Wiring money without escrow.</strong> Deposits go to a third-party escrow company. Always.</p></li>
+    <li><p><strong>Skipping title insurance.</strong> It's inexpensive peace of mind on the biggest purchase you'll make there.</p></li>
+    <li><p><strong>Working with an unvetted agent.</strong> Real estate isn't regulated in Mexico the way it is in BC. Ask whether your agent is a member of AMPI, Mexico's national real estate association, and how long they've been working locally.</p></li>
+    <li><p><strong>Buying pre-construction from an unproven developer.</strong> Check the developer's track record and completed projects before you hand over a deposit.</p></li>
+    <li><p><strong>Buying sight unseen.</strong> Photos and video tours are great. Standing on the balcony at 3 p.m. in May is better.</p></li>
+    <li><p><strong>Forgetting about the BC side.</strong> Taxes, timing and what happens to your BC home matter just as much as the Mexico purchase.</p></li>
+  </ul>
+  <div class="folio"><span>22</span><span>Seven mistakes</span></div>
+</section>
+
+<!-- 23 · chapter 10 -->
+<section class="page full" data-p>
+  <div class="ph img" style="background-image:url('img/plate-coast.jpg')"></div>
+  <div style="position:absolute;inset:auto 0 0 0;padding:16cqi 10cqi 12cqi;background:linear-gradient(180deg,rgba(11,47,44,0) 0%,rgba(11,47,44,.88) 38%);color:#fff">
+    <p class="kick" style="opacity:.85">Chapter ten</p>
+    <h2 style="margin-bottom:4cqi">Your <em>next steps</em></h2>
+    <p>If you've read this far, you're not just dreaming anymore. Here's how to take the next step.</p>
+    <p><strong>Book a free Mexico Move call.</strong> We'll talk about your goals, what your BC home could sell for, and which path fits you best. No pressure and no obligation. Call or text me at 604-365-9369.</p>
+  </div>
+</section>
+
+<!-- 24 · back cover -->
+<section class="page sea" data-p>
+  <div class="contact" style="margin-top:0;border-top:0;padding-top:0">
+    <img src="img/zada-logo-white.png" alt="Zada Group" style="width:30cqi;margin-bottom:9cqi;display:block" />
+    <p class="name">Liz Murphy, REALTOR®</p>
+    <p>Zada Group, Stonehaus Realty</p>
+    <p style="margin-top:3cqi">604-365-9369<br>liz@zadagroup.ca<br>lizmurphy.ca<br><em style="font-family:var(--serif)">Hablo español</em></p>
+  </div>
+  <div class="legal bottom" style="border-top:1px solid rgba(243,239,230,.25);padding-top:4cqi">
+    <p style="font-family:var(--serif);font-style:italic;font-size:2.4cqi;opacity:1;margin-bottom:2cqi">Important information</p>
+    <p>This guide is general information only and is not legal, tax, immigration or financial advice. Always consult qualified professionals about your own situation. Figures are approximate as of November 2026, may change, and should be confirmed before you make any decision. Mexico figures are in US dollars unless stated otherwise. Liz Murphy and Stonehaus Realty may receive a referral fee from Bienvenidos Real Estate or another professional she introduces you to; any referral fee will be disclosed to you in writing. Bienvenidos Real Estate is an independent brokerage in Mexico and is not affiliated with Stonehaus Realty. Not intended to solicit buyers or sellers currently under contract.</p>
+    <p style="margin-top:2cqi">Property photography courtesy of Bienvenidos Real Estate, Bucerías.</p>
+  </div>
+</section>
+
+</div>
+</main>
+
+<div class="ui">
+  <button id="prev" aria-label="Previous page">&#8592;</button>
+  <span class="count" id="count">Cover</span>
+  <button id="next" aria-label="Next page">&#8594;</button>
+</div>
+
+<script>
+{
+  const book = document.getElementById('book');
+  const pages = [...book.querySelectorAll('[data-p]')];
+  const N = pages.length;
+  pages.forEach((p, i) => { if (i % 2) p.classList.add('even'); });
+  // pair pages into leaves: front = odd page (right side), back = even page (left side)
+  const leaves = [];
+  for (let i = 0; i < N; i += 2) {
+    const leaf = document.createElement('div'); leaf.className = 'leaf';
+    const f = document.createElement('div'); f.className = 'face front'; f.appendChild(pages[i]);
+    const b = document.createElement('div'); b.className = 'face back'; if (pages[i + 1]) b.appendChild(pages[i + 1]);
+    leaf.append(f, b); book.appendChild(leaf); leaves.push(leaf);
+  }
+  const L = leaves.length;
+  let s = 0; // number of flipped leaves
+  const prev = document.getElementById('prev'), next = document.getElementById('next'), count = document.getElementById('count');
+  const mobile = () => matchMedia('(max-width:820px), (max-aspect-ratio:1/1)').matches;
+
+  function render() {
+    leaves.forEach((leaf, k) => {
+      const flipped = k < s;
+      leaf.classList.toggle('flipped', flipped);
+      leaf.style.zIndex = flipped ? k + 1 : L - k;
+    });
+    book.classList.toggle('closed-front', s === 0);
+    book.classList.toggle('closed-back', s === L);
+    prev.disabled = s === 0; next.disabled = s === L;
+    count.textContent = s === 0 ? 'Cover' : s === L ? 'Back cover' : `${2 * s} to ${2 * s + 1} of ${N}`;
+  }
+  function go(d) {
+    if (mobile()) { const w = book.querySelector('.face').offsetWidth + 14; book.scrollBy({ left: d * w, behavior: 'smooth' }); return; }
+    const t = Math.max(0, Math.min(L, s + d)); if (t === s) return;
+    const leaf = leaves[d > 0 ? s : s - 1]; leaf.style.zIndex = 100;
+    s = t; render(); leaf.style.zIndex = 100;
+    setTimeout(render, 900);
+  }
+  prev.addEventListener('click', () => go(-1));
+  next.addEventListener('click', () => go(1));
+  addEventListener('keydown', e => { if (e.key === 'ArrowRight') go(1); if (e.key === 'ArrowLeft') go(-1); });
+  ['l', 'r'].forEach(side => { const h = document.createElement('div'); h.className = 'hit ' + side; h.addEventListener('click', () => go(side === 'r' ? 1 : -1)); book.appendChild(h); });
+  book.addEventListener('scroll', () => {
+    if (!mobile()) return;
+    const w = book.querySelector('.face').offsetWidth + 14; const i = Math.round(book.scrollLeft / w);
+    count.textContent = `${i + 1} of ${N}`; prev.disabled = i === 0; next.disabled = i === N - 1;
+  }, { passive: true });
+  // swipe on touch tablets in spread mode
+  let x0 = null;
+  book.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+  book.addEventListener('touchend', e => { if (x0 === null || mobile()) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1); x0 = null; });
+  render();
+  if (mobile()) count.textContent = `1 of ${N}`;
+}
+</script>
+</body>
+</html>
