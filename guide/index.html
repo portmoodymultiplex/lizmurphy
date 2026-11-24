@@ -155,8 +155,8 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:1px solid var(--rule
 .loaded .stage .book.closed-back{transform:translateX(calc(var(--pw) * .5))}
 .loaded .stage .book:not(.closed-front):not(.closed-back){transform:none}
 .face::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .45s ease}
-.leaf .face.front::after{background:linear-gradient(90deg,rgba(4,26,16,.28),rgba(4,26,16,0) 45%)}
-.leaf .face.back::after{background:linear-gradient(270deg,rgba(4,26,16,.28),rgba(4,26,16,0) 45%)}
+.leaf .face.front::after{background:linear-gradient(90deg,rgba(0,0,0,.28),rgba(0,0,0,0) 45%)}
+.leaf .face.back::after{background:linear-gradient(270deg,rgba(0,0,0,.28),rgba(0,0,0,0) 45%)}
 .leaf.turning .face::after{opacity:1;transition:opacity .2s ease}
 .leaf .page > *{transition:opacity .45s ease, transform .6s cubic-bezier(.2,.7,.2,1)}
 .leaf.turning .page > :not(.ph):not(.folio){opacity:.35;transform:translateY(6px)}
