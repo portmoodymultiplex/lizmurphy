@@ -895,3 +895,211 @@ footer {
   .nav-menu.open { transform: translateX(0); }
   .nav-cta-pair { margin-left: 0; flex-direction: column; align-items: stretch; gap: 0.75rem; }
 }
+
+/* ==========================================================================
+   THE SECOND COAST · Mexico program (Riviera Nayarit)
+   Sand + sea accents layered on the sage system. Let the photography lead.
+   ========================================================================== */
+:root {
+  --sand: #EFE6D4;
+  --sand-deep: #D9C8A6;
+  --sea: #134E4A;
+  --sea-ink: #0B2F2C;
+}
+
+/* Homepage band: video starts inset like a framed photograph, opens to full-bleed on scroll */
+.coast-band {
+  position: relative;
+  height: 190vh;
+  background: var(--off-white);
+}
+.coast-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.coast-frame {
+  --p: 0;
+  position: absolute;
+  inset: calc((1 - var(--p)) * 9vh) calc((1 - var(--p)) * 9vw);
+  border-radius: calc((1 - var(--p)) * 10px);
+  overflow: hidden;
+  background: var(--sea-ink);
+  will-change: inset;
+}
+.coast-frame video, .coast-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(calc(1.12 - var(--p) * 0.12));
+}
+.coast-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 55% at 15% 85%, rgba(11,47,44,0.55), transparent 70%),
+    linear-gradient(180deg, rgba(11,47,44,0.10) 0%, rgba(11,47,44,0.05) 40%, rgba(11,47,44,0.75) 100%);
+}
+.coast-copy {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--max);
+  padding: 0 var(--gutter);
+  align-self: flex-end;
+  margin-bottom: clamp(3rem, 9vh, 6rem);
+  color: var(--off-white);
+  opacity: var(--copy, 0);
+  transform: translateY(calc((1 - var(--copy, 0)) * 24px));
+}
+.coast-copy .kicker {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  opacity: 0.9;
+  margin-bottom: 0.75rem;
+}
+.coast-copy h2 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(3rem, 8.5vw, 7.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 30px rgba(11,47,44,0.35);
+}
+.coast-copy p {
+  max-width: 46ch;
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  line-height: 1.65;
+  opacity: 0.92;
+  margin-bottom: 2rem;
+}
+.btn-sand { background: var(--sand); color: var(--sea-ink); border-color: var(--sand); }
+.btn-sand:hover { background: var(--off-white); border-color: var(--off-white); opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .coast-band { height: auto; }
+  .coast-sticky { position: relative; height: 92vh; }
+  .coast-frame { --p: 1; }
+  .coast-copy { --copy: 1; }
+}
+
+/* ---------- Mexico program page ---------- */
+.mx-hero .hero-bg video, .mx-hero .hero-bg img { filter: brightness(0.78) saturate(1.02); }
+.mx-hero .hero-overlay {
+  background:
+    radial-gradient(ellipse 60% 45% at 50% 50%, rgba(11,47,44,0.6), transparent 75%),
+    linear-gradient(180deg, rgba(11,47,44,0.35) 0%, rgba(11,47,44,0.15) 40%, rgba(11,47,44,0.85) 100%);
+}
+.mx-how { display: grid; grid-template-columns: minmax(0,0.9fr) minmax(0,1.1fr); gap: clamp(2rem,6vw,6rem); }
+@media (max-width: 880px) { .mx-how { grid-template-columns: 1fr; } }
+.mx-hero h1 { font-size: clamp(3.2rem, 9vw, 8rem); line-height: 0.95; letter-spacing: -0.02em; }
+
+.mx-section { padding: clamp(5rem, 11vw, 9rem) var(--gutter); }
+.mx-section.sand { background: var(--sand); color: var(--sea-ink); }
+.mx-section.sea { background: var(--sea-ink); color: var(--off-white); }
+.mx-section.paper { background: var(--off-white); color: var(--sea-ink); }
+.mx-inner { max-width: var(--max); margin: 0 auto; }
+.mx-narrow { max-width: 760px; margin: 0 auto; }
+
+.mx-lead {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.mx-lead em { font-style: italic; }
+.mx-body p { font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.4rem; }
+.mx-sign { font-family: var(--serif); font-style: italic; font-size: 1.5rem; margin-top: 2rem; }
+
+.mx-h2 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(2.2rem, 4.8vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin-bottom: 1.5rem;
+}
+.mx-h2 em { font-style: italic; }
+
+.mx-paths { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(11,47,44,0.18); margin-top: 3.5rem; }
+.mx-path { padding: 2.5rem 2rem 2.5rem 0; border-right: 1px solid rgba(11,47,44,0.18); }
+.mx-path + .mx-path { padding-left: 2rem; }
+.mx-path:last-child { border-right: 0; }
+.mx-path .n { font-family: var(--serif); font-style: italic; font-size: 1.1rem; opacity: 0.6; margin-bottom: 1.25rem; }
+.mx-path h3 { font-family: var(--serif); font-weight: 400; font-size: 1.75rem; line-height: 1.15; margin-bottom: 1rem; }
+.mx-path p { font-size: 1rem; line-height: 1.7; opacity: 0.85; }
+@media (max-width: 880px) {
+  .mx-paths { grid-template-columns: 1fr; }
+  .mx-path, .mx-path + .mx-path { padding: 2rem 0; border-right: 0; border-bottom: 1px solid rgba(11,47,44,0.18); }
+}
+
+.mx-plate { position: relative; height: 88vh; min-height: 520px; overflow: hidden; }
+.mx-plate img { width: 100%; height: 100%; object-fit: cover; }
+.mx-plate figcaption {
+  position: absolute; left: var(--gutter); bottom: 1.5rem;
+  font-family: var(--serif); font-style: italic; color: var(--off-white); font-size: 1rem; opacity: 0.9;
+  text-shadow: 0 1px 12px rgba(0,0,0,0.4);
+}
+
+.mx-towns { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 3rem; border-top: 1px solid rgba(250,248,242,0.18); }
+.mx-town { padding: 1.75rem 1.5rem 1.75rem 0; border-bottom: 1px solid rgba(250,248,242,0.18); }
+.mx-town h3 { font-family: var(--serif); font-weight: 400; font-size: 1.5rem; margin-bottom: 0.4rem; }
+.mx-town p { font-size: 0.95rem; line-height: 1.6; opacity: 0.75; }
+@media (max-width: 980px) { .mx-towns { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .mx-towns { grid-template-columns: 1fr; } }
+
+.mx-steps { counter-reset: s; list-style: none; margin-top: 2.5rem; }
+.mx-steps li { counter-increment: s; display: grid; grid-template-columns: 4rem 1fr; gap: 1rem; padding: 1.6rem 0; border-top: 1px solid rgba(11,47,44,0.15); }
+.mx-steps li::before { content: counter(s, decimal-leading-zero); font-family: var(--serif); font-style: italic; font-size: 1.4rem; opacity: 0.55; }
+.mx-steps h3 { font-family: var(--serif); font-weight: 400; font-size: 1.4rem; margin-bottom: 0.35rem; }
+.mx-steps p { font-size: 1rem; line-height: 1.7; opacity: 0.85; }
+
+.mx-figures { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 3rem; border-top: 1px solid rgba(11,47,44,0.18); }
+.mx-fig { padding: 2rem 1.5rem 2rem 0; }
+.mx-fig .big { font-family: var(--serif); font-weight: 300; font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1; margin-bottom: 0.75rem; }
+.mx-fig .label { font-size: 0.95rem; line-height: 1.55; opacity: 0.8; }
+.mx-note { font-size: 0.85rem; opacity: 0.6; margin-top: 1.5rem; max-width: 70ch; }
+@media (max-width: 880px) { .mx-figures { grid-template-columns: 1fr 1fr; } }
+
+.mx-guide { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+.mx-guide-cover {
+  aspect-ratio: 3 / 4;
+  background: var(--off-white);
+  box-shadow: 0 30px 80px rgba(11,47,44,0.25);
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 8% 9%;
+  color: var(--sea-ink);
+  position: relative;
+  overflow: hidden;
+}
+.mx-guide-cover .ph { position: absolute; left: 0; right: 0; top: 0; height: 58%; background-size: cover; background-position: center; }
+.mx-guide-cover .t { position: relative; margin-top: auto; }
+.mx-guide-cover .t small { display: block; font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; margin-bottom: 0.75rem; opacity: 0.7; }
+.mx-guide-cover .t strong { display: block; font-family: var(--serif); font-weight: 300; font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1.05; }
+.mx-guide-cover .t span { display: block; font-family: var(--serif); font-style: italic; font-size: 0.95rem; margin-top: 0.6rem; opacity: 0.75; }
+@media (max-width: 880px) { .mx-guide { grid-template-columns: 1fr; } }
+
+.mx-partner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 6rem); }
+.mx-partner h3 { font-family: var(--serif); font-weight: 400; font-size: 1.6rem; margin-bottom: 0.75rem; }
+.mx-partner p { line-height: 1.75; opacity: 0.88; margin-bottom: 1rem; }
+.mx-partner a.u { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 880px) { .mx-partner { grid-template-columns: 1fr; } }
+
+.mx-section.sand .contact-form label { color: var(--sea); }
+.mx-section.sand .contact-form input, .mx-section.sand .contact-form select, .mx-section.sand .contact-form textarea { background: var(--off-white); }
+
+/* Keep long select options from pushing the contact form wider than the screen on phones */
+.contact-form .field { min-width: 0; }
+.contact-form select { max-width: 100%; min-width: 0; }
+.mx-hero .lede { text-shadow: 0 1px 2px rgba(11,47,44,0.6), 0 2px 24px rgba(11,47,44,0.55); color: #fff; }
+.mx-hero h1 { text-shadow: 0 2px 40px rgba(11,47,44,0.4); }
