@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Email Signature | Liz Murphy</title>
+<meta name="description" content="Liz Murphy email signature" />
+<meta name="robots" content="noindex" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<nav class="nav solid">
+  <a href="index.html" class="nav-logo">Liz <strong>Murphy</strong> <small>Zada Group</small></a>
+  <button class="nav-toggle" aria-label="Menu">☰</button>
+  <ul class="nav-menu">
+    <li><a href="buyers.html">For Buyers</a></li>
+    <li><a href="sellers.html">For Sellers</a></li>
+    <li><a href="blog/downsizing-guide-seniors-families.html">Downsizing</a></li>
+    <li><a href="mexico.html">Mexico</a></li>
+    <li><a href="marketing.html">Marketing</a></li>
+    <li><a href="blog/index.html">Journal</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="tel:+16043659369" class="nav-phone">604.365.9369</a></li>
+    <li class="nav-cta-pair">
+      <a href="index.html#contact-form" class="nav-cta">Book a Call</a>
+    </li>
+  </ul>
+</nav>
+
+<section class="section light" style="padding-top:11rem;">
+  <div class="section-inner" style="max-width:900px;">
+    <h1 style="font-size:clamp(2.2rem,4.5vw,3.5rem);margin-bottom:1rem;">Liz's email signature.</h1>
+    <p style="margin-bottom:0.5rem;">Click <strong>Copy signature</strong>, then in Gmail go to Settings &rarr; See all settings &rarr; General &rarr; Signature, delete the old one, paste, and Save changes at the bottom of the page.</p>
+    <p style="margin-bottom:2rem;opacity:.75;">If copying doesn't work, select everything inside the box with your mouse and copy it instead.</p>
+    <p style="margin-bottom:2.5rem;"><button id="copy" class="btn btn-filled" style="border:0;">Copy signature</button> <span id="done" style="margin-left:1rem;color:#7A5F44;"></span></p>
+    <div style="background:#fff;border:1px solid rgba(4,26,16,.12);padding:2.5rem;">
+      <div id="sig"><table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;">
+  <tr>
+    <td valign="middle" style="padding:0 18px 0 0;">
+      <a href="https://lizmurphy.ca" style="text-decoration:none;"><img src="https://lizmurphy.ca/assets/images/email/liz-avatar.png" width="80" height="80" alt="Liz Murphy" style="display:block;width:80px;height:80px;border-radius:50%;border:1px solid #9F8163;" /></a>
+    </td>
+    <td valign="middle" style="border-left:2px solid #9F8163;padding:2px 0 2px 18px;">
+      <div style="margin:0 0 6px 0;line-height:1.2;">
+        <span style="font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:22px;color:#041A10;">Liz Murphy</span>
+        <span style="font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#9F8163;padding-left:10px;">REALTOR&reg;</span>
+      </div>
+      <div style="font-size:14px;line-height:1.6;color:#8A877F;">
+        <span style="color:#041A10;font-weight:bold;">Zada Group</span> &middot; Stonehaus Realty &middot; Medallion Club Member
+      </div>
+      <div style="font-size:14px;line-height:1.6;color:#8A877F;">
+        Seniors Real Estate Specialist&reg; &middot; Bilingual: English &amp; Espa&ntilde;ol
+      </div>
+      <div style="font-size:14px;line-height:1.6;color:#8A877F;">
+        Downsizing &amp; Mexico: <a href="https://lizmurphy.ca/mexico.html" style="color:#9F8163;text-decoration:none;">The Second Coast</a>
+      </div>
+      <div style="font-size:14px;line-height:1.6;color:#8A877F;">
+        <a href="tel:+16043659369" style="color:#041A10;text-decoration:none;">604.365.9369</a> /
+        <a href="mailto:liz@zadagroup.ca" style="color:#041A10;text-decoration:none;">liz@zadagroup.ca</a> /
+        <a href="https://lizmurphy.ca" style="color:#041A10;text-decoration:none;">lizmurphy.ca</a> /
+        <a href="https://www.instagram.com/lizmurphyrealtor/" style="color:#041A10;text-decoration:none;">Instagram</a>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style="padding:14px 0 0 0;font-size:11px;line-height:1.55;color:#9A978F;max-width:560px;">
+      Thinking of buying or selling with me? BC law asks that I explain how representation works before we get started. It isn't a contract, just good information:
+      <a href="https://lizmurphy.ca/disclosures.html" style="color:#7A5F44;">Disclosures &amp; your relationship with a real estate professional</a>.
+    </td>
+  </tr>
+</table></div>
+    </div>
+  </div>
+</section>
+<script>
+document.getElementById('copy').addEventListener('click', async () => {
+  const el = document.getElementById('sig');
+  try {
+    await navigator.clipboard.write([new ClipboardItem({'text/html': new Blob([el.innerHTML], {type:'text/html'}), 'text/plain': new Blob([el.innerText], {type:'text/plain'})})]);
+  } catch (e) {
+    const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); document.execCommand('copy'); s.removeAllRanges();
+  }
+  document.getElementById('done').textContent = 'Copied. Paste it into Gmail.';
+});
+</script>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-logo">
+      Liz Murphy
+      <p>REALTOR® and Seniors Real Estate Specialist®. Senior agent on the Zada Group team, Stonehaus Realty Corp.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/lizmurphyrealtor/" target="_blank" rel="noopener" aria-label="Liz Murphy on Instagram">@lizmurphyrealtor</a>
+        <a href="https://instagram.com/zadarealestategroup" target="_blank" rel="noopener" aria-label="Zada Group on Instagram">@zadarealestategroup</a>
+      </div>
+    </div>
+    <div class="footer-col"><h5>Work With Liz</h5><ul>
+      <li><a href="buyers.html">For Buyers</a></li>
+      <li><a href="sellers.html">For Sellers</a></li>
+      <li><a href="blog/downsizing-guide-seniors-families.html">The Downsizing Guide</a></li>
+      <li><a href="mexico.html">Mexico: The Second Coast</a></li>
+      <li><a href="marketing.html">Marketing</a></li>
+      <li><a href="blog/index.html">Journal</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>About</h5><ul>
+      <li><a href="about.html">About Liz</a></li>
+      <li><a href="https://zadagroup.ca" target="_blank" rel="noopener">Zada Group</a></li>
+      <li><a href="https://stonehausrealty.ca" target="_blank" rel="noopener">Stonehaus Realty</a></li>
+      <li><a href="disclosures.html">Disclosures</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Contact</h5><ul>
+      <li><a href="mailto:liz@zadagroup.ca">liz@zadagroup.ca</a></li>
+      <li><a href="tel:+16043659369">604.365.9369</a></li>
+      <li>Stonehaus Realty Corp</li>
+      <li style="opacity:0.7; font-size:0.85rem;">A-1126 Austin Avenue<br/>Coquitlam, BC V3K 3P5</li>
+    </ul></div>
+  </div>
+  <div class="footer-zada">
+    <a href="https://zadagroup.ca" target="_blank" rel="noopener" aria-label="Zada Group">
+      <img src="assets/images/logo-white.png" alt="Zada Group" />
+    </a>
+    <div class="footer-zada-text">A senior agent on the Zada Group team. Stonehaus Realty Corp.</div>
+  </div>
+  <div class="footer-compliance">
+    <p>Liz Murphy is a licensed REALTOR® with Stonehaus Realty Corp., independently owned and operated. Member of the Real Estate Board of Greater Vancouver (REBGV) and the Canadian Real Estate Association (CREA). The trademarks REALTOR®, REALTORS®, and the REALTOR® logo are controlled by CREA and identify real estate professionals who are members of CREA. MLS®, Multiple Listing Service®, and the associated logos are owned by CREA and identify the quality of services provided by real estate professionals who are members of CREA. SRES® and the Seniors Real Estate Specialist® designation are marks of the SRES Council of the National Association of REALTORS®. This is not intended to solicit clients already under contract with another agent.</p>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Liz Murphy · All rights reserved</span>
+    <span>Seniors Real Estate Specialist® · Zada Group · Stonehaus Realty</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
