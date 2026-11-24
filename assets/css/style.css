@@ -430,3 +430,33 @@ footer { background: var(--green-deepest); color: var(--paper); padding: clamp(5
 
 .hero h1, .hero .lede { text-shadow: 0 1px 2px rgba(4,26,16,.35), 0 2px 24px rgba(4,26,16,.35); }
 @media (max-width: 720px) { .hero-overlay { background: linear-gradient(180deg, rgba(4,26,16,.4) 0%, rgba(4,26,16,.55) 40%, rgba(4,26,16,.88) 100%); } }
+
+/* Readability pass: deeper shade on every photo or video that carries text */
+.hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(4,26,16,.85) 0%, rgba(4,26,16,.68) 36%, rgba(4,26,16,.32) 66%, rgba(4,26,16,.2) 100%),
+    linear-gradient(180deg, rgba(4,26,16,.5) 0%, rgba(4,26,16,.1) 26%, rgba(4,26,16,.1) 70%, rgba(4,26,16,.5) 100%);
+}
+.split .bg-img::after { background: linear-gradient(90deg, rgba(4,26,16,.88) 0%, rgba(4,26,16,.66) 42%, rgba(4,26,16,.25) 75%, rgba(4,26,16,.15) 100%); }
+.split.flip .bg-img::after { background: linear-gradient(270deg, rgba(4,26,16,.88) 0%, rgba(4,26,16,.66) 42%, rgba(4,26,16,.25) 75%, rgba(4,26,16,.15) 100%); }
+.section-quote.photo .quote-bg::after { background: rgba(4,26,16,.74); }
+.coast-band::after {
+  background:
+    linear-gradient(90deg, rgba(4,26,16,.86) 0%, rgba(4,26,16,.62) 42%, rgba(4,26,16,.2) 75%, rgba(4,26,16,.12) 100%),
+    linear-gradient(180deg, rgba(4,26,16,.15) 0%, rgba(4,26,16,.05) 35%, rgba(4,26,16,.7) 100%);
+}
+.hero h1, .hero .lede, .split .content h2, .split .content p, .coast-copy h2, .coast-copy p, .section-quote.photo h2, .section-quote.photo p {
+  text-shadow: 0 1px 2px rgba(4,26,16,.4), 0 2px 24px rgba(4,26,16,.35);
+}
+.split .content p, .coast-copy p, .hero .lede { color: #fff; }
+.mx-plate::after { content: ""; position: absolute; inset: auto 0 0 0; height: 30%; background: linear-gradient(180deg, rgba(4,26,16,0), rgba(4,26,16,.55)); pointer-events: none; }
+.mx-plate figcaption { z-index: 1; }
+@media (max-width: 880px) {
+  .split .bg-img::after, .split.flip .bg-img::after { background: linear-gradient(180deg, rgba(4,26,16,.35), rgba(4,26,16,.9)); }
+}
+@media (max-width: 720px) {
+  .hero-overlay { background: linear-gradient(180deg, rgba(4,26,16,.5) 0%, rgba(4,26,16,.62) 40%, rgba(4,26,16,.9) 100%); }
+  .coast-band::after { background: linear-gradient(180deg, rgba(4,26,16,.3) 0%, rgba(4,26,16,.65) 40%, rgba(4,26,16,.92) 100%); }
+}
+/* Body text on light sections: fuller contrast */
+.section-head p, .specialty-card p, .neighbourhood-card p, .num-cell .label, .mx-path p, .mx-steps p, .mx-fig .label, .mx-town p, .consult-banner p, .contact-section .lede { opacity: .92; }
