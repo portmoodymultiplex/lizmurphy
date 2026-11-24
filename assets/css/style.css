@@ -411,3 +411,19 @@ footer { background: var(--green-deepest); color: var(--paper); padding: clamp(5
   .js .reveal, .js .coast-copy > * { opacity: 1; transform: none; transition: none; }
   .coast-band video, .mx-plate img { transform: none; }
 }
+
+/* Hero + nav refinement */
+.nav-menu > li > a, .nav-cta { white-space: nowrap; }
+.nav-menu { gap: clamp(0.9rem, 1.6vw, 1.75rem); }
+.nav-menu > li > a { font-size: 0.68rem; letter-spacing: 0.16em; }
+@media (max-width: 1280px) { .nav-menu > li > a.nav-phone { display: none; } }
+.hero { align-items: center; }
+.hero h1 { font-size: clamp(2.6rem, 5.2vw, 5rem); line-height: 1.02; max-width: 16ch; margin-bottom: 1.5rem; }
+.hero h1 strong, .hero h1 .h1-line2 { color: var(--paper); font-family: var(--serif-italic); font-style: italic; letter-spacing: -0.01em; }
+.hero .lede { max-width: 44ch; font-size: 1.02rem; }
+.hero-bg img, .hero-bg video { filter: none; }
+.hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(4,26,16,.68) 0%, rgba(4,26,16,.42) 32%, rgba(4,26,16,0) 58%),
+    linear-gradient(180deg, rgba(4,26,16,.35) 0%, rgba(4,26,16,0) 22%, rgba(4,26,16,0) 75%, rgba(4,26,16,.3) 100%);
+}
