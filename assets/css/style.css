@@ -424,6 +424,9 @@ footer { background: var(--green-deepest); color: var(--paper); padding: clamp(5
 .hero-bg img, .hero-bg video { filter: none; }
 .hero-overlay {
   background:
-    linear-gradient(90deg, rgba(4,26,16,.68) 0%, rgba(4,26,16,.42) 32%, rgba(4,26,16,0) 58%),
-    linear-gradient(180deg, rgba(4,26,16,.35) 0%, rgba(4,26,16,0) 22%, rgba(4,26,16,0) 75%, rgba(4,26,16,.3) 100%);
+    linear-gradient(90deg, rgba(4,26,16,.82) 0%, rgba(4,26,16,.62) 34%, rgba(4,26,16,.2) 62%, rgba(4,26,16,.1) 100%),
+    linear-gradient(180deg, rgba(4,26,16,.45) 0%, rgba(4,26,16,.05) 24%, rgba(4,26,16,.05) 72%, rgba(4,26,16,.4) 100%);
 }
+
+.hero h1, .hero .lede { text-shadow: 0 1px 2px rgba(4,26,16,.35), 0 2px 24px rgba(4,26,16,.35); }
+@media (max-width: 720px) { .hero-overlay { background: linear-gradient(180deg, rgba(4,26,16,.4) 0%, rgba(4,26,16,.55) 40%, rgba(4,26,16,.88) 100%); } }
